@@ -80,6 +80,7 @@ export function ValidateCode(){
         refreshObservations();
         if(isValid())
         {
+            console.log("now print");
             refreshObservations();
             // print success/failure message and truth table
             let head = `<tr><th>Time</th><th>CLK</th><th>Out Expected</th><th>Out Observed</th>`;

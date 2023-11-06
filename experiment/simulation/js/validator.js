@@ -286,27 +286,44 @@ export function printObsTable() {
     {
         counter[input1] = arr[arg1][i];
         let clk = 0;
-        if(edge=="posedge")
+        if(edge==="posedge")
         clk = 1;
-
-        if(arr["CLK"][i]==clk && i!=0 && arr["CLK"][i-1]==1-clk)
+        console.log("reached");
+        console.log(arr["CLK"][i]);
+        console.log(clk);
+        if(parseInt(arr["CLK"][i])===clk && i!==0 && parseInt(arr["CLK"][i-1])===1-clk)
         {
             let rhs= 0;
+
+            console.log(rhs);
             if(operator2=="+")
-            rhs+=parseInt(RHS2);
+            rhs= rhs+parseInt(RHS2);
             else
-            rhs-=parseInt(RHS2);
+            rhs=rhs-parseInt(RHS2);
             
-            if(counter[RHS1]!="x")
-            rhs += counter[RHS1];
+            console.log(rhs);
+            if(counter[RHS1]!=="x")
+            rhs = rhs+ counter[RHS1];
             
             else
             rhs = "x";
+            
+            console.log(rhs);
 
             counter[LHS] = rhs;
+            if(counter["carry_out"]!=="x" && counter["carry_out"]>3)
+            counter["carry_out"] %= 4;
+            if(counter["carry_out"]!=="x" && counter["carry_out"]>3)
+            counter["carry_out"] %= 4;
         }
+        if(counter["carry_out"]!=="x" && counter["carry_out"]>3)
+        counter["carry_out"] %= 4;
+        if(counter["Out"]!=="x" && counter["Out"]>3)
+        counter["Out"] %= 4;
 
         counter[assign_LHS] = counter[assign_RHS];
+        let tb={};
+
 
         if(arr[arg2][i]!==counter[output])
         {
