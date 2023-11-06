@@ -1,1 +1,1 @@
-## Experiment name
+## Design of an Up-Counter using Verilog 
