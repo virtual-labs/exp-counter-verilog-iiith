@@ -281,7 +281,7 @@ export function printObsTable() {
     let arr = {"CLK" : [0,1,0,1,0,1,0,1,0,1], "Out": [0,0,1,1,2,2,3,3,0,0]};
     let body = "";
     let isCorrect = true;
-    let  counter= {"carry_out":0,"Out":"x"};
+    let  counter= {"counter_up":0,"Out":"x"};
     for(let i=0; i<10;++i)
     {
         counter[input1] = arr[arg1][i];
@@ -302,6 +302,7 @@ export function printObsTable() {
             rhs=rhs-parseInt(RHS2);
             
             console.log(rhs);
+            console.log(counter[RHS1]);
             if(counter[RHS1]!=="x")
             rhs = rhs+ counter[RHS1];
             
@@ -311,19 +312,17 @@ export function printObsTable() {
             console.log(rhs);
 
             counter[LHS] = rhs;
-            if(counter["carry_out"]!=="x" && counter["carry_out"]>3)
-            counter["carry_out"] %= 4;
-            if(counter["carry_out"]!=="x" && counter["carry_out"]>3)
-            counter["carry_out"] %= 4;
+            if(counter["counter_up"]!=="x" && counter["counter_up"]>3)
+            counter["counter_up"] %= 4;
+            if(counter["counter_up"]!=="x" && counter["counter_up"]>3)
+            counter["counter_up"] %= 4;
         }
-        if(counter["carry_out"]!=="x" && counter["carry_out"]>3)
-        counter["carry_out"] %= 4;
+        if(counter["counter_up"]!=="x" && counter["counter_up"]>3)
+        counter["counter_up"] %= 4;
         if(counter["Out"]!=="x" && counter["Out"]>3)
         counter["Out"] %= 4;
 
         counter[assign_LHS] = counter[assign_RHS];
-        let tb={};
-
 
         if(arr[arg2][i]!==counter[output])
         {
@@ -332,7 +331,7 @@ export function printObsTable() {
         }
         else
         {
-            body+=`<tr class="bold-table"><th>${i}</th><th>${map[arr["CLK"][i]]}</th><td class="success-table"> ${map[arr["Out"][i]]} </td><td class="success-table"> ${counter["Out"]}</td>`;
+            body+=`<tr class="bold-table"><th>${i}</th><th>${arr["CLK"][i]}</th><td class="success-table"> ${map[arr["Out"][i]]} </td><td class="success-table"> ${map[counter["Out"]]}</td>`;
         }
     }
     document.getElementById("table-body").innerHTML = body;
