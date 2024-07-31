@@ -1,5 +1,11 @@
-1. To demonstrate the practical implementation of positive and negative edged Counters using the Verilog hardware description language.
+Demonstrate Practical Implementation:
 
-2. To enable learners to simulate and analyze the behavior of Countersusing software tools.
+Illustrate the implementation of positive and negative edge-triggered counters using the Verilog hardware description language.
 
-3. To foster a deeper understanding of how Counters can be used to build more complex sequential circuits.
+Enable Simulation and Analysis:
+
+Equip learners with the knowledge to simulate and analyze the behavior of counters using software tools, fostering hands-on experience in digital circuit design.
+
+Foster Deeper Understanding:
+
+Cultivate a comprehensive understanding of how counters can serve as building blocks for more complex sequential circuits, enhancing learners' ability to design sophisticated digital systems.
