@@ -1,6 +1,6 @@
 1. Design a down counter using Verilog
 
-2. DEsign a Ripple counter using verilog
+2. Design a Ripple counter using verilog
 
 3. Design a 4-bit up and down counter using Verilog.
 
