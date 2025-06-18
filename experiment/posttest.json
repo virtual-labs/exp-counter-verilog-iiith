@@ -149,7 +149,7 @@
         "a": "Correct. Reducing the number of flip-flops can aid in lowering power consumption.",
         "b": "Incorrect. Increasing clock frequency may improve speed but doesn't necessarily lower power consumption.",
         "c": "Incorrect. Adding more logic gates might increase power usage.",
-        "d": "Correct. Clock gating techniques can be employed to reduce power consumption."
+        "d": "Incorrect. While clock gating can reduce power, minimizing flip-flops is more effective for a 2-bit counter."
       },
       "correctAnswer": "a",
       "difficulty": "advanced"
