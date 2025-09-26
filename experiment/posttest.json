@@ -2,38 +2,174 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "In Verilog, what are the essential components required to design a 2-bit up counter?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Flip-flops and combinational logic for incrementing.",
+        "b": "Only combinational logic for counting.",
+        "c": "Only flip-flops for counting.",
+        "d": "Multiplexers and latches for incrementing."
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Correct. A 2-bit up counter involves flip-flops to store values and combinational logic for incrementing.",
+        "b": "Incorrect. Combinational logic alone cannot maintain count state.",
+        "c": "Incorrect. Flip-flops alone cannot increment the count.",
+        "d": "Incorrect. Multiplexers and latches aren't the primary components for a simple up counter design."
       },
       "correctAnswer": "a",
-      "difficulty": "beginner"
+      "difficulty": "intermediate"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "What is the purpose of the 'always @(posedge clk)' block in a Verilog code for a 2-bit up counter?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "To initialize the counter's values.",
+        "b": "To define the clock signal.",
+        "c": "To specify the counter's reset condition.",
+        "d": "To update the counter on the rising edge of the clock signal."
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Incorrect. The 'always @(posedge clk)' block is not for initialization.",
+        "b": "Incorrect. It's not defining the clock signal itself.",
+        "c": "Incorrect. It's not related to specifying the reset condition.",
+        "d": "Correct. This block triggers an update on the rising edge of the clock signal."
+      },
+      "correctAnswer": "d",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "How is the concept of 'blocking' and 'non-blocking' assignments applied in Verilog for a 2-bit up counter?",
+      "answers": {
+        "a": "Blocking assignments update outputs concurrently, while non-blocking assignments occur sequentially.",
+        "b": "Blocking assignments update outputs sequentially, while non-blocking assignments occur concurrently.",
+        "c": "Both blocking and non-blocking assignments occur sequentially.",
+        "d": "Both blocking and non-blocking assignments occur concurrently."
+      },
+      "explanations": {
+        "a": "Incorrect. Blocking and non-blocking assignments have a different sequence of execution.",
+        "b": "Incorrect. Their roles in output update are opposite to the actual behavior.",
+        "c": "Incorrect. Only non-blocking assignments occur sequentially.",
+        "d": "Correct. Both blocking and non-blocking assignments can occur concurrently."
+      },
+      "correctAnswer": "d",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Explain the role of 'reg' and 'wire' data types in a Verilog code for a 2-bit up counter.",
+      "answers": {
+        "a": "'Reg' is for combinational logic while 'wire' is for sequential logic.",
+        "b": "'Reg' is for sequential logic while 'wire' is for connecting modules.",
+        "c": "'Reg' is for storing values in sequential logic while 'wire' connects sequential elements.",
+        "d": "'Reg' and 'wire' are interchangeable for storing counter values."
+      },
+      "explanations": {
+        "a": "Incorrect. 'Reg' and 'wire' are not tied to specific logic types.",
+        "b": "Incorrect. Their use isn't specific to sequential or combinational logic.",
+        "c": "Correct. 'Reg' stores values in sequential logic, and 'wire' connects sequential elements in Verilog.",
+        "d": "Incorrect. 'Reg' and 'wire' have distinct roles and are not interchangeable."
       },
       "correctAnswer": "c",
-      "difficulty": "beginner"
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What are the main challenges or potential issues one might encounter when designing a 2-bit up counter in Verilog?",
+      "answers": {
+        "a": "Race conditions and metastability.",
+        "b": "Asynchronous clock edges and combinational loops.",
+        "c": "Synchronous reset and power consumption.",
+        "d": "Blocking assignments and propagation delay."
+      },
+      "explanations": {
+        "a": "Correct. Race conditions and metastability are common issues in counter designs.",
+        "b": "Incorrect. Asynchronous clock edges and combinational loops might cause issues but aren't primary challenges in this context.",
+        "c": "Incorrect. Synchronous reset and power consumption might not be main challenges in counter design.",
+        "d": "Incorrect. Blocking assignments and propagation delay might not be the primary challenges in counter design."
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Explain the role of clock domains in a 2-bit up counter design and how potential clock domain crossing issues can be addressed.",
+      "answers": {
+        "a": "Clock domains ensure synchronous operation, and issues can be addressed by synchronizers.",
+        "b": "Clock domains determine asynchronous operation, and issues can be resolved by using asynchronous logic.",
+        "c": "Clock domains relate to counter initialization, and issues are resolved by altering the initialization process.",
+        "d": "Clock domains define combinational logic, and issues are addressed by using sequential logic."
+      },
+      "explanations": {
+        "a": "Correct. Clock domains ensure synchronization, and synchronizers can resolve clock domain crossing issues.",
+        "b": "Incorrect. Clock domains aim for synchronization, not asynchrony.",
+        "c": "Incorrect. Clock domains are not solely for counter initialization.",
+        "d": "Incorrect. Clock domains are not specifically tied to types of logic used in the counter."
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "How would you implement a synchronous reset for a 2-bit up counter in Verilog?",
+      "answers": {
+        "a": "Use a combinational logic circuit for reset control.",
+        "b": "Include an 'always @(posedge reset)' block for resetting.",
+        "c": "Include a reset input and update counter values based on reset signal.",
+        "d": "Add a clock signal for resetting the counter."
+      },
+      "explanations": {
+        "a": "Incorrect. Synchronous reset typically doesn't involve combinational logic.",
+        "b": "Incorrect. 'always @(posedge reset)' is not the typical method for a synchronous reset.",
+        "c": "Correct. A reset input updates counter values synchronously.",
+        "d": "Incorrect. A reset signal isn't based on a clock signal but operates in sync with the clock."
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Describe how a carry signal is handled in a 2-bit up counter design.",
+      "answers": {
+        "a": "The carry signal is generated when the counter reaches maximum value.",
+        "b": "The carry signal is propagated to the least significant bit for incrementing.",
+        "c": "There is no carry signal in a 2-bit counter.",
+        "d": "The carry signal is used for synchronous reset."
+      },
+      "explanations": {
+        "a": "Correct. The carry signal occurs when the counter reaches its maximum value.",
+        "b": "Incorrect. The carry signal's role isn't in propagating to the LSB.",
+        "c": "Incorrect. 2-bit counters can generate a carry signal.",
+        "d": "Incorrect. The carry signal isn't typically linked to synchronous reset."
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "How can you optimize a 2-bit up counter design in Verilog for reduced power consumption?",
+      "answers": {
+        "a": "Minimize the number of flip-flops used for the counter.",
+        "b": "Increase the clock frequency for faster operation.",
+        "c": "Add more logic gates to improve counter efficiency.",
+        "d": "Utilize clock gating techniques for power reduction."
+      },
+      "explanations": {
+        "a": "Correct. Reducing the number of flip-flops can aid in lowering power consumption.",
+        "b": "Incorrect. Increasing clock frequency may improve speed but doesn't necessarily lower power consumption.",
+        "c": "Incorrect. Adding more logic gates might increase power usage.",
+        "d": "Incorrect. While clock gating can reduce power, minimizing flip-flops is more effective for a 2-bit counter."
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Explain how metastability could impact a 2-bit up counter's reliability and how to minimize its effects.",
+      "answers": {
+        "a": "Metastability results in incorrect output values; reducing clock frequency minimizes its effects.",
+        "b": "Metastability leads to unpredictable behavior; using proper synchronizers minimizes its impact.",
+        "c": "Metastability is harmless in counter designs; no action is needed to mitigate its effects.",
+        "d": "Metastability results in noise interference; using higher voltage levels minimizes its impact."
+      },
+      "explanations": {
+        "a": "Incorrect. Reducing clock frequency might help, but it doesn't eliminate metastability.",
+        "b": "Correct. Synchronizers can mitigate the impact of metastability in counter designs.",
+        "c": "Incorrect. Metastability can indeed impact counters' reliability.",
+        "d": "Incorrect. Metastability isn't directly related to noise interference or voltage levels."
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
     }
   ]
 }

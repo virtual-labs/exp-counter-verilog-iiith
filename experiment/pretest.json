@@ -2,38 +2,174 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "What is the purpose of a 2-bit up counter?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "To count up from 0 to 3 in binary.",
+        "b": "To count down from 3 to 0 in binary.",
+        "c": "To count randomly.",
+        "d": "To perform addition operations."
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "A 2-bit up counter counts upwards in binary from 00 to 11 (0 to 3).",
+        "b": "Incorrect. The 2-bit up counter counts up, not down.",
+        "c": "Incorrect. The counter's purpose is sequential counting.",
+        "d": "Incorrect. The counter's purpose is counting, not addition."
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "In Verilog, what is the basic structure of a flip-flop?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Always block.",
+        "b": "If-else block.",
+        "c": "D flip-flop or register.",
+        "d": "Module declaration."
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Incorrect. The always block is used for procedural logic.",
+        "b": "Incorrect. If-else is a conditional statement.",
+        "c": "Correct. A D flip-flop or register is a fundamental building block for a counter in Verilog.",
+        "d": "Incorrect. Module declaration defines the module's interface and can include multiple blocks."
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
+    },
+    {
+      "question": "What is the purpose of a 'reg' declaration in Verilog?",
+      "answers": {
+        "a": "To define a sequential logic circuit.",
+        "b": "To declare a flip-flop.",
+        "c": "To define a register for storing values.",
+        "d": "To specify combinational logic."
+      },
+      "explanations": {
+        "a": "Incorrect. 'Reg' is used for data storage, not circuit definition.",
+        "b": "Incorrect. 'Reg' is not specifically for flip-flops.",
+        "c": "Correct. 'Reg' declares a register for storing values in Verilog.",
+        "d": "Incorrect. 'Reg' is not used for specifying combinational logic."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Explain how a T flip-flop is different from a D flip-flop.",
+      "answers": {
+        "a": "T flip-flop triggers on both rising and falling clock edges.",
+        "b": "D flip-flop triggers on both rising and falling clock edges.",
+        "c": "T flip-flop toggles output only on a clock edge when T=1.",
+        "d": "D flip-flop stores the input value when clock is high."
+      },
+      "explanations": {
+        "a": "Incorrect. T and D flip-flops trigger on specific clock edges, but differently.",
+        "b": "Incorrect. D flip-flop triggers on the clock edge but doesn't toggle output based on input.",
+        "c": "Correct. T flip-flop toggles the output when the clock edge arrives and T is 1.",
+        "d": "Incorrect. D flip-flop stores the input value at the rising edge of the clock."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What is a race condition in digital circuits and how can it be resolved in a Verilog design?",
+      "answers": {
+        "a": "A situation where two signals arrive at different times causing unpredictable behavior. Resolved by synchronizing signals.",
+        "b": "When two signals are always in conflict. Resolved by using asynchronous logic.",
+        "c": "When the clock signal is faster than the input signals. Resolved by slowing down the clock.",
+        "d": "A situation where output depends on the order of events. Resolved by changing the design structure."
+      },
+      "explanations": {
+        "a": "Correct. Race conditions occur due to timing differences and are resolved by synchronizing signals.",
+        "b": "Incorrect. Asynchronous logic can exacerbate race conditions.",
+        "c": "Incorrect. Slowing the clock is not a typical solution to resolve race conditions.",
+        "d": "Incorrect. Changing the design structure might not directly resolve race conditions."
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Explain the concept of 'blocking' and 'non-blocking' assignments in Verilog.",
+      "answers": {
+        "a": "Blocking assignments are used for sequential logic, while non-blocking assignments are for combinational logic.",
+        "b": "Blocking assignments happen simultaneously, while non-blocking assignments occur sequentially.",
+        "c": "Blocking assignments occur one after another, while non-blocking assignments happen concurrently.",
+        "d": "Blocking assignments execute in procedural blocks, while non-blocking assignments are outside blocks."
+      },
+      "explanations": {
+        "a": "Incorrect. The purpose of assignments is not based on the type of logic.",
+        "b": "Incorrect. Both types can occur in any sequence but have different behaviors.",
+        "c": "Incorrect. Both can occur sequentially or concurrently but have distinct functionalities.",
+        "d": "Correct. Blocking assignments are procedural within blocks, while non-blocking are for concurrent updates."
+      },
+      "correctAnswer": "d",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What is the purpose of using the 'always @ (posedge clk)' block in Verilog?",
+      "answers": {
+        "a": "To specify combinational logic.",
+        "b": "To implement asynchronous logic.",
+        "c": "To define a clocked sequential logic.",
+        "d": "To create a reset signal."
+      },
+      "explanations": {
+        "a": "Incorrect. The always @ (posedge clk) block is used for sequential logic sensitive to clock edges.",
+        "b": "Incorrect. It's for clocked logic, not asynchronous logic.",
+        "c": "Correct. This block defines clocked sequential logic triggered on the positive edge of 'clk'.",
+        "d": "Incorrect. It defines clocked behavior, not creating reset signals."
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Describe the significance of 'synchronous reset' and 'asynchronous reset' in Verilog counter design.",
+      "answers": {
+        "a": "Synchronous reset doesn’t depend on the clock signal, while asynchronous reset does.",
+        "b": "Synchronous reset is instant, while asynchronous reset introduces a delay.",
+        "c": "Synchronous reset is concurrent with the clock signal, while asynchronous reset isn’t.",
+        "d": "Synchronous reset is aligned with the clock edge, while asynchronous reset can occur at any time."
+      },
+      "explanations": {
+        "a": "Incorrect. Both types of resets are related to the clock signal in their own ways.",
+        "b": "Incorrect. The difference between synchronous and asynchronous reset isn't about timing.",
+        "c": "Incorrect. Both synchronous and asynchronous resets can relate to clock edges.",
+        "d": "Correct. Synchronous reset is aligned with clock edges, while asynchronous reset can occur asynchronously."
+      },
+      "correctAnswer": "d",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "How does a Johnson counter differ from a Ring counter in Verilog?",
+      "answers": {
+        "a": "Johnson counter counts in binary, while Ring counter counts in Gray code.",
+        "b": "Johnson counter uses flip-flops, while Ring counter uses registers.",
+        "c": "Johnson counter has bidirectional shift, while Ring counter is unidirectional.",
+        "d": "Johnson counter is asynchronous, while Ring counter is synchronous."
+      },
+      "explanations": {
+        "a": "Incorrect. Both Johnson and Ring counters can count in binary or other codes.",
+        "b": "Incorrect. Both use flip-flops for counting.",
+        "c": "Correct. Johnson counter has bidirectional shifting, whereas Ring counter is unidirectional.",
+        "d": "Incorrect. Both can be designed as synchronous or asynchronous."
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Explain the purpose and implementation of 'preset' and 'clear' in a Verilog counter design.",
+      "answers": {
+        "a": "Preset and clear are used to control the direction of counting.",
+        "b": "Preset sets the initial count, while clear stops counting.",
+        "c": "Preset starts counting from a specific value, while clear resets the counter to 0.",
+        "d": "Preset and clear are interchangeable terms in counter design."
+      },
+      "explanations": {
+        "a": "Incorrect. Preset and clear are not for controlling counting direction.",
+        "b": "Incorrect. Preset and clear serve different functions in resetting counter values.",
+        "c": "Correct. Preset initializes the counter to a specific value, while clear resets the counter to 0.",
+        "d": "Incorrect. Preset and clear serve distinct functions and aren't interchangeable."
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced"
     }
   ]
 }
