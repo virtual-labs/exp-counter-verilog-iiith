@@ -104,7 +104,7 @@
     "flatted": "^3.2.7",
     "fn.name": "^1.1.0",
     "follow-redirects": "^1.15.2",
-    "form-data": "^3.0.1",
+    "form-data": "^3.0.4",
     "fs-extra": "^9.1.0",
     "fs-readdir-recursive": "^1.1.0",
     "fs.realpath": "^1.0.0",
